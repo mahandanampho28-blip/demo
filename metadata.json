@@ -1,0 +1,6 @@
+{
+  "name": "Lexovia Law Firm",
+  "description": "Luxury law firm website with smooth animations, interactive AI legal consultation, and attorney showcase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

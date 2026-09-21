@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1a202c;
+    background-color: #0f171e;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Animations */
+@keyframes spinClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(180, 133, 72, 0.6);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 16px rgba(180, 133, 72, 0);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-spin-stamp {
+  animation: spinClockwise 20s linear infinite;
+}
+
+.animate-pulse-play {
+  animation: pulseGlow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Luxury Arched Frames matching the design in picture */
+.arch-frame {
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+}
+
+.arch-frame-sm {
+  border-top-left-radius: 120px;
+  border-top-right-radius: 120px;
+}
+
+/* Guilloche & subtle wavy lines for luxury security background */
+.bg-guilloche {
+  background-image: radial-gradient(rgba(180, 133, 72, 0.08) 1px, transparent 0),
+                    radial-gradient(rgba(180, 133, 72, 0.05) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* Gold button gradient */
+.btn-gold {
+  background: linear-gradient(135deg, #c79653 0%, #b48548 50%, #9e7138 100%);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #d4a35f 0%, #c19151 50%, #ab7c41 100%);
+  box-shadow: 0 10px 25px -5px rgba(180, 133, 72, 0.35);
+  transform: translateY(-1px);
+}
